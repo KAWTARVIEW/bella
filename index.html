@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BELLA INSTITUTE LLC | Scientific Research & Development Services</title>
+    <title>BELLA INSTITUTE LLC | Medical Aesthetics & Advanced Skincare Training</title>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
     <style>
-        /* Scientific Modern Teal, Emerald & Pure Slate Palette */
+        /* Modern Aesthetic MedSpa & Institute Palette */
         :root {
-            --bg-main: #f8fafc;
+            --bg-main: #faf9f6;
             --bg-card: #ffffff;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --teal-primary: #0d9488;
-            --teal-dark: #115e59;
-            --teal-glow: rgba(13, 148, 136, 0.15);
-            --slate-navy: #0f172a;
-            --border-color: #e2e8f0;
-            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            --text-dark: #232323;
+            --text-muted: #666666;
+            --accent-rose: #d4a396;
+            --accent-rose-dark: #b88375;
+            --accent-soft: rgba(212, 163, 150, 0.15);
+            --charcoal: #2d2d2d;
+            --border-color: #e8e5e1;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
         * {
@@ -30,31 +31,36 @@
         body {
             background-color: var(--bg-main);
             color: var(--text-dark);
-            font-family: var(--font-family);
+            font-family: var(--font-sans);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         /* Top Bar */
-        .top-notice {
-            background: var(--slate-navy);
-            color: #cbd5e1;
+        .top-bar {
+            background: var(--charcoal);
+            color: #d1d1d1;
             font-size: 0.825rem;
-            font-weight: 500;
+            letter-spacing: 0.05em;
             padding: 0.6rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Header Navigation */
+        .top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Navigation Header */
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border-color);
             padding: 1.25rem 6%;
             display: flex;
@@ -66,14 +72,16 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--slate-navy);
-            letter-spacing: -0.02em;
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--charcoal);
+            text-transform: uppercase;
         }
 
         .brand i {
-            color: var(--teal-primary);
+            color: var(--accent-rose);
         }
 
         nav {
@@ -85,30 +93,33 @@
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
             transition: color 0.2s;
         }
 
         nav a:hover {
-            color: var(--teal-primary);
+            color: var(--accent-rose-dark);
         }
 
-        .btn-teal {
-            background: linear-gradient(135deg, #0d9488, #115e59);
+        .btn-rose {
+            background: var(--accent-rose);
             color: #ffffff;
             padding: 0.75rem 1.6rem;
-            border-radius: 8px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.875rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
             transition: all 0.25s ease;
-            box-shadow: 0 4px 14px var(--teal-glow);
         }
 
-        .btn-teal:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
+        .btn-rose:hover {
+            background: var(--accent-rose-dark);
+            box-shadow: 0 4px 15px var(--accent-soft);
         }
 
         .wrapper {
@@ -119,109 +130,102 @@
 
         /* Hero Section */
         #about {
-            padding: 5.5rem 0;
+            padding: 5rem 0;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 4rem;
             align-items: center;
         }
 
+        .hero-badge {
+            display: inline-block;
+            color: var(--accent-rose-dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
         .hero-text h1 {
-            font-size: 3.25rem;
-            line-height: 1.15;
-            color: var(--slate-navy);
-            font-weight: 800;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.025em;
+            font-family: var(--font-sans);
+            font-size: 3rem;
+            line-height: 1.2;
+            color: var(--charcoal);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
 
         .hero-text h1 span {
-            color: var(--teal-primary);
+            color: var(--accent-rose);
+            font-style: italic;
         }
 
         .hero-text p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .stat-card h4 {
-            font-size: 1.3rem;
-            color: var(--slate-navy);
-            font-weight: 800;
-        }
-
-        .stat-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0;
-        }
-
-        .hero-image-container {
+        .hero-image-box {
             position: relative;
         }
 
-        .hero-image-container img {
+        .main-hero-img {
             width: 100%;
-            height: 480px;
+            height: 500px;
             object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
-            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
         }
 
-        .floating-card {
+        .hero-floating-card {
             position: absolute;
             bottom: -20px;
             left: -20px;
             background: #ffffff;
             border: 1px solid var(--border-color);
-            padding: 1.25rem 1.5rem;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        .floating-card i {
-            color: var(--teal-primary);
-            background: var(--teal-glow);
-            padding: 0.75rem;
+            padding: 1.25rem 1.75rem;
             border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        /* Services Grid */
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 6rem auto 3rem auto;
-        }
-
-        .section-header p {
-            color: var(--teal-primary);
+        .hero-floating-card h4 {
+            font-size: 1.1rem;
+            color: var(--charcoal);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        }
+
+        .hero-floating-card p {
             font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            max-width: 650px;
+            margin: 5rem auto 3rem auto;
+        }
+
+        .section-title span {
+            color: var(--accent-rose-dark);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            display: block;
             margin-bottom: 0.5rem;
         }
 
-        .section-header h2 {
+        .section-title h2 {
             font-size: 2.25rem;
-            color: var(--slate-navy);
-            font-weight: 800;
+            color: var(--charcoal);
+            font-weight: 700;
         }
 
+        /* Services Cards Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -231,32 +235,30 @@
         .service-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 16px;
+            border-radius: 12px;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--teal-primary);
-            box-shadow: 0 12px 30px rgba(13, 148, 136, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+            border-color: var(--accent-rose);
         }
 
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--teal-glow);
-            color: var(--teal-primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+        .service-card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 2rem;
         }
 
         .service-card h3 {
             font-size: 1.25rem;
-            color: var(--slate-navy);
+            color: var(--charcoal);
             margin-bottom: 0.75rem;
             font-weight: 700;
         }
@@ -266,124 +268,100 @@
             font-size: 0.95rem;
         }
 
-        /* Showcase Banner */
-        .showcase-banner {
-            background: var(--slate-navy);
-            color: #ffffff;
-            border-radius: 20px;
-            padding: 4rem;
-            margin: 6rem 0;
+        /* Gallery Showcase */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .showcase-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+        .gallery-item {
+            position: relative;
+            height: 260px;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        .showcase-images img {
+        .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 12px;
+            transition: transform 0.4s ease;
         }
 
-        .showcase-images img:first-child {
-            grid-column: span 2;
-            height: 250px;
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
-        .showcase-content h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .showcase-content p {
-            color: #94a3b8;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-bullets {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .feature-bullets li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #e2e8f0;
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(35, 35, 35, 0.85));
+            color: #ffffff;
+            padding: 1.5rem 1rem 1rem 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
         }
 
-        .feature-bullets li i {
-            color: var(--teal-primary);
-        }
-
-        /* Contact Section */
-        .contact-card {
+        /* Contact Block */
+        .contact-box {
             background: #ffffff;
-            border-radius: 20px;
             border: 1px solid var(--border-color);
+            border-radius: 16px;
             padding: 4rem;
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 4rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-bottom: 6rem;
+            margin: 6rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
         .contact-info h2 {
             font-size: 2rem;
-            color: var(--slate-navy);
+            color: var(--charcoal);
             margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .info-row {
-            display: flex;
-            gap: 1.25rem;
-            margin-top: 2rem;
-            align-items: flex-start;
-        }
-
-        .info-row i {
-            color: var(--teal-primary);
-            background: var(--teal-glow);
-            padding: 1rem;
-            border-radius: 12px;
-        }
-
-        .info-row label {
-            display: block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
             font-weight: 700;
         }
 
-        .info-row strong {
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            color: var(--accent-rose);
+            background: var(--accent-soft);
+            padding: 0.85rem;
+            border-radius: 8px;
+        }
+
+        .info-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .info-item strong {
             font-size: 1rem;
-            color: var(--slate-navy);
+            color: var(--charcoal);
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
 
@@ -391,37 +369,36 @@
             width: 100%;
             background: var(--bg-main);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 1rem;
             color: var(--text-dark);
             font-family: inherit;
-            font-size: 0.95rem;
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
             outline: none;
-            border-color: var(--teal-primary);
+            border-color: var(--accent-rose);
             background: #ffffff;
         }
 
-        .submit-btn {
-            background: var(--slate-navy);
+        .btn-submit {
+            background: var(--charcoal);
             color: #ffffff;
             border: none;
-            padding: 1.1rem;
-            border-radius: 10px;
+            padding: 1rem;
+            border-radius: 8px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             cursor: pointer;
-            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: background 0.2s;
         }
 
-        .submit-btn:hover {
-            background: var(--teal-primary);
+        .btn-submit:hover {
+            background: var(--accent-rose);
         }
 
-        /* Modal Privacy Policy */
+        /* Modal styling */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -429,8 +406,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(6px);
+            background: rgba(35, 35, 35, 0.7);
+            backdrop-filter: blur(4px);
             z-index: 2000;
             align-items: center;
             justify-content: center;
@@ -443,8 +420,8 @@
 
         .modal-body {
             background: #ffffff;
-            border-radius: 16px;
-            max-width: 750px;
+            border-radius: 12px;
+            max-width: 700px;
             max-height: 80vh;
             overflow-y: auto;
             padding: 3rem;
@@ -453,52 +430,42 @@
         }
 
         .modal-body h3 {
-            color: var(--slate-navy);
+            color: var(--charcoal);
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
 
-        .modal-body h4 {
-            color: var(--slate-navy);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .close-btn {
+        .modal-close {
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
             background: none;
             border: none;
-            color: var(--text-dark);
             cursor: pointer;
+            color: var(--charcoal);
         }
 
         footer {
-            background: var(--slate-navy);
-            color: #94a3b8;
+            background: var(--charcoal);
+            color: #a0a0a0;
             padding: 3rem 0;
             text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .footer-links {
-            margin-top: 1rem;
-        }
-
-        .footer-links a {
-            color: var(--teal-primary);
+        footer a {
+            color: var(--accent-rose);
             text-decoration: none;
             cursor: pointer;
             font-weight: 600;
         }
 
-        @media (max-width: 1024px) {
-            #about, .showcase-banner, .contact-card {
+        @media (max-width: 900px) {
+            #about, .contact-box {
                 grid-template-columns: 1fr;
             }
-            .form-row {
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -506,20 +473,20 @@
 </head>
 <body>
 
-    <div class="top-notice">
-        <div>BELLA INSTITUTE LLC — Scientific Research & Development Services</div>
-        <div>Atlanta, GA Facility</div>
+    <div class="top-bar">
+        <span><i data-lucide="sparkles" size="14"></i> Atlanta's Premier Medical Aesthetics & Institute</span>
+        <span>Est. 2011 • Atlanta, GA</span>
     </div>
 
     <header>
         <div class="brand">
-            <i data-lucide="flask-conical"></i> BELLA INSTITUTE LLC
+            <i data-lucide="flower-2"></i> Bella Institute
         </div>
         <nav>
-            <a href="#about">Overview</a>
-            <a href="#services">Research Capabilities</a>
-            <a href="#projects">Innovation</a>
-            <a href="#contact" class="btn-teal">Inquire Now</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Treatments</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact" class="btn-rose">Book Appointment</a>
         </nav>
     </header>
 
@@ -527,171 +494,148 @@
         <!-- Hero Section -->
         <section id="about">
             <div class="hero-text">
-                <h1>Advancing Discovery Through <span>Scientific Research</span></h1>
-                <p>Dedicated to noncommercial scientific research, technical innovation, and experimental development across high-impact specialized disciplines.</p>
-
-                <a href="#contact" class="btn-teal" style="padding: 1rem 2rem; display: inline-block;">Connect With Our Researchers</a>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h4>Atlanta, GA</h4>
-                        <p>3216 Paces Ferry Pl NW</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>Scientific R&D</h4>
-                        <p>Core Industry Sector</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>Noncommercial</h4>
-                        <p>Research Organization</p>
-                    </div>
-                </div>
+                <span class="hero-badge">Repair • Protect • Maintain</span>
+                <h1>The Journey to <span>Optimal Beauty</span> Starts With You</h1>
+                <p>At Bella Institute & MedSpa, we create personalized, non-invasive treatment plans using proprietary techniques to target your unique skin concerns from head to toe[cite: 14].</p>
+                <a href="#contact" class="btn-rose" style="padding: 1rem 2rem; display: inline-block;">Schedule A Consultation</a>
             </div>
 
-            <div class="hero-image-container">
-                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Researcher working in modern laboratory with scientific equipment">
-                <div class="floating-card">
-                    <i data-lucide="microscope" size="28"></i>
-                    <div>
-                        <strong style="color: var(--slate-navy); display: block;">Advanced Methodology</strong>
-                        <span style="color: var(--text-muted); font-size: 0.85rem;">Rigorous Scientific Standards</span>
-                    </div>
+            <div class="hero-image-box">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Professional esthetician preparing a personalized skin treatment" class="main-hero-img">
+                <div class="hero-floating-card">
+                    <h4>Est. 2011</h4>
+                    <p>Atlanta's Trusted Skincare Experts[cite: 14]</p>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
         <section id="services">
-            <div class="section-header">
-                <p>Technical Excellence</p>
-                <h2>Research & Development Disciplines</h2>
+            <div class="section-title">
+                <span>Tailored Care</span>
+                <h2>Clinical Skincare & Aesthetic Treatments</h2>
             </div>
 
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i data-lucide="dna" size="26"></i>
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Client receiving facial skincare treatment" class="service-card-img">
+                    <div class="service-card-content">
+                        <h3>Facial Rejuvenation</h3>
+                        <p>Customized clinical facials, peels, and dermal therapy designed to restore skin vibrancy, clarity, and tone.</p>
                     </div>
-                    <h3>Scientific Research</h3>
-                    <p>Conducting empirical analysis, controlled studies, and scientific investigation aimed at advancing technological and biological domain knowledge.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i data-lucide="atom" size="26"></i>
+                    <img src="https://images.unsplash.com/photo-1512290900673-70020d20d7dd?auto=format&fit=crop&w=600&q=80" alt="Aesthetic medical consultation with skincare products" class="service-card-img">
+                    <div class="service-card-content">
+                        <h3>Advanced Medical Aesthetics</h3>
+                        <p>Targeted non-invasive procedural plans leveraging state-of-the-art dermatological equipment and techniques[cite: 14].</p>
                     </div>
-                    <h3>Experimental Development</h3>
-                    <p>Translating research insights into innovative methodologies, specialized technical frameworks, and experimental models.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i data-lucide="binary" size="26"></i>
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Professional skincare product application" class="service-card-img">
+                    <div class="service-card-content">
+                        <h3>Clinical Education & Training</h3>
+                        <p>Comprehensive training protocols and specialized educational programming through Bella Institute[cite: 13, 14].</p>
                     </div>
-                    <h3>Technical & Professional Services</h3>
-                    <p>Providing expert scientific oversight, technical evaluation, and specialized consulting within regulated frameworks.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Showcase Banner -->
-        <section id="projects" class="showcase-banner">
-            <div class="showcase-images">
-                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Scientist analyzing samples using high precision lab instrumentation">
-                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80" alt="Scientific research lab environment with specialized equipment">
-                <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=600&q=80" alt="High-tech scientific data analysis interface">
+        <!-- Gallery Showcase -->
+        <section id="gallery" style="margin-top: 5rem;">
+            <div class="section-title">
+                <span>Our Practice</span>
+                <h2>Experience Bella MedSpa</h2>
             </div>
 
-            <div class="showcase-content">
-                <p style="color: var(--teal-primary); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; font-size: 0.85rem;">Scientific Integrity</p>
-                <h3>Pioneering Research with Purpose & Precision</h3>
-                <p>At BELLA INSTITUTE LLC, our team is committed to analytical rigor and systematic scientific investigation to solve complex domain challenges.</p>
-
-                <ul class="feature-bullets">
-                    <li><i data-lucide="check-circle-2"></i> State-of-the-Art Laboratory Protocol Compliance</li>
-                    <li><i data-lucide="check-circle-2"></i> Specialized Scientific & Technical Staff</li>
-                    <li><i data-lucide="check-circle-2"></i> Evidence-Based Empirical Standards</li>
-                </ul>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" alt="Clean modern medspa interior consultation room">
+                    <div class="gallery-overlay">Clinical Environment</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Aesthetic facial skincare treatment preparation">
+                    <div class="gallery-overlay">Personalized Care Plans[cite: 14]</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1629251091566-48c2bc8527a4?auto=format&fit=crop&w=600&q=80" alt="Spa wellness and skincare products arrangement">
+                    <div class="gallery-overlay">Radiant & Healthy Skin[cite: 14]</div>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-card">
-                <div class="contact-info">
-                    <h2>Contact Our Team</h2>
-                    <p>Inquire about research initiatives, scientific collaborations, or general organizational details.</p>
+        <section id="contact" class="contact-box">
+            <div class="contact-info">
+                <h2>Schedule Your Visit</h2>
+                <p>Reach out to book an appointment or request information regarding specialized Institute programs[cite: 13, 14].</p>
 
-                    <div class="info-row">
-                        <i data-lucide="mail"></i>
-                        <div>
-                            <label>Email Address</label>
-                            <strong>contact@bellainstitute.org</strong>
-                        </div>
-                    </div>
-
-                    <div class="info-row">
-                        <i data-lucide="phone"></i>
-                        <div>
-                            <label>Telephone</label>
-                            <strong>+1 472 255 5752</strong>
-                        </div>
-                    </div>
-
-                    <div class="info-row">
-                        <i data-lucide="map-pin"></i>
-                        <div>
-                            <label>Facility Address</label>
-                            <strong>3216 Paces Ferry Pl NW Atlanta, GA, 30305-1309 United States</strong>
-                        </div>
+                <div class="info-item">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <span>Email Contact</span>
+                        <strong>contact@bellainstitute.org</strong>
                     </div>
                 </div>
 
-                <form class="contact-form" onsubmit="event.preventDefault();">
-                    <div class="form-row">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="text" placeholder="Phone Number" required>
+                <div class="info-item">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <span>Phone Line</span>
+                        <strong>+1 472 255 5752</strong>
                     </div>
-                    <input type="email" placeholder="Email Address" required>
-                    <textarea rows="5" placeholder="Details regarding your research inquiry, collaboration proposal, or technical consultation..." required></textarea>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+                </div>
+
+                <div class="info-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <span>Atlanta Location</span>
+                        <strong>3216 Paces Ferry Pl NW Atlanta, GA, 30305 United States</strong>
+                    </div>
+                </div>
             </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea rows="4" placeholder="How can we assist you with your skin journey?" required></textarea>
+                <button type="submit" class="btn-submit">Request Appointment</button>
+            </form>
         </section>
     </div>
 
     <!-- Privacy Policy Modal -->
     <div id="privacy-modal" class="modal-overlay">
         <div class="modal-body">
-            <button class="close-btn" onclick="togglePrivacyModal()"><i data-lucide="x" size="24"></i></button>
+            <button class="modal-close" onclick="toggleModal()"><i data-lucide="x" size="24"></i></button>
             <h3>Privacy Policy</h3>
-
-            <h4>1. Information Collection</h4>
-            <p>BELLA INSTITUTE LLC collects personal information provided via contact forms (such as names, phone numbers, and email addresses) strictly to address inquiries and handle research communications.</p>
-
-            <h4>2. Data Usage & Confidentiality</h4>
-            <p>We maintain strict confidentiality protocols regarding research inquiries and user communications. Personal details will never be sold or shared with external third parties.</p>
-
-            <h4>3. Inquiries</h4>
-            <p>For questions regarding our privacy guidelines, please reach out directly to contact@bellainstitute.org.</p>
+            <br>
+            <h4>1. Data Collection</h4>
+            <p>BELLA INSTITUTE LLC collects user-provided contact information (name, email, phone) exclusively for scheduling appointments and responding to client requests[cite: 13].</p>
+            <br>
+            <h4>2. Data Protection</h4>
+            <p>Client information is strictly confidential and is never shared, traded, or sold to third parties.</p>
+            <br>
+            <h4>3. Contact Us</h4>
+            <p>For questions regarding our privacy practices, email contact@bellainstitute.org.</p>
         </div>
     </div>
 
     <footer>
         <div class="wrapper">
-            <p>&copy; BELLA INSTITUTE LLC. All rights reserved. Atlanta, GA.</p>
-            <div class="footer-links">
-                <a onclick="togglePrivacyModal()">Privacy Policy</a>
-            </div>
+            <p>&copy; BELLA INSTITUTE LLC. All rights reserved. Atlanta, GA[cite: 13].</p>
+            <p style="margin-top: 0.5rem;"><a onclick="toggleModal()">Privacy Policy</a></p>
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
 
-        function togglePrivacyModal() {
-            const modal = document.getElementById('privacy-modal');
-            modal.classList.toggle('active');
+        function toggleModal() {
+            document.getElementById('privacy-modal').classList.toggle('active');
         }
     </script>
 </body>
