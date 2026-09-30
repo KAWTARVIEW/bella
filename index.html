@@ -1,128 +1,698 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
-    }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p {
-      margin: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELLA INSTITUTE LLC | Scientific Research & Development Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <style>
+        /* Scientific Modern Teal, Emerald & Pure Slate Palette */
+        :root {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --teal-primary: #0d9488;
+            --teal-dark: #115e59;
+            --teal-glow: rgba(13, 148, 136, 0.15);
+            --slate-navy: #0f172a;
+            --border-color: #e2e8f0;
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-notice {
+            background: var(--slate-navy);
+            color: #cbd5e1;
+            font-size: 0.825rem;
+            font-weight: 500;
+            padding: 0.6rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--slate-navy);
+            letter-spacing: -0.02em;
+        }
+
+        .brand i {
+            color: var(--teal-primary);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--teal-primary);
+        }
+
+        .btn-teal {
+            background: linear-gradient(135deg, #0d9488, #115e59);
+            color: #ffffff;
+            padding: 0.75rem 1.6rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px var(--teal-glow);
+        }
+
+        .btn-teal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
+        }
+
+        .wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        #about {
+            padding: 5.5rem 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.25rem;
+            line-height: 1.15;
+            color: var(--slate-navy);
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-text h1 span {
+            color: var(--teal-primary);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-card h4 {
+            font-size: 1.3rem;
+            color: var(--slate-navy);
+            font-weight: 800;
+        }
+
+        .stat-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .hero-image-container {
+            position: relative;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+            border: 1px solid var(--border-color);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .floating-card i {
+            color: var(--teal-primary);
+            background: var(--teal-glow);
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        /* Services Grid */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 6rem auto 3rem auto;
+        }
+
+        .section-header p {
+            color: var(--teal-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--slate-navy);
+            font-weight: 800;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--teal-primary);
+            box-shadow: 0 12px 30px rgba(13, 148, 136, 0.12);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--teal-glow);
+            color: var(--teal-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--slate-navy);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Showcase Banner */
+        .showcase-banner {
+            background: var(--slate-navy);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 4rem;
+            margin: 6rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .showcase-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .showcase-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .showcase-images img:first-child {
+            grid-column: span 2;
+            height: 250px;
+        }
+
+        .showcase-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .showcase-content p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-bullets li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        .feature-bullets li i {
+            color: var(--teal-primary);
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 6rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--slate-navy);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 2rem;
+            align-items: flex-start;
+        }
+
+        .info-row i {
+            color: var(--teal-primary);
+            background: var(--teal-glow);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        .info-row label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .info-row strong {
+            font-size: 1rem;
+            color: var(--slate-navy);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            color: var(--text-dark);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--teal-primary);
+            background: #ffffff;
+        }
+
+        .submit-btn {
+            background: var(--slate-navy);
+            color: #ffffff;
+            border: none;
+            padding: 1.1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: var(--teal-primary);
+        }
+
+        /* Modal Privacy Policy */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-body {
+            background: #ffffff;
+            border-radius: 16px;
+            max-width: 750px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 3rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .modal-body h3 {
+            color: var(--slate-navy);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-body h4 {
+            color: var(--slate-navy);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        footer {
+            background: var(--slate-navy);
+            color: #94a3b8;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--teal-primary);
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            #about, .showcase-banner, .contact-card {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
-  </header>
-
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
-  </div>
-
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
-
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+    <div class="top-notice">
+        <div>BELLA INSTITUTE LLC — Scientific Research & Development Services</div>
+        <div>Atlanta, GA Facility</div>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
-  </section>
+    <header>
+        <div class="brand">
+            <i data-lucide="flask-conical"></i> BELLA INSTITUTE LLC
+        </div>
+        <nav>
+            <a href="#about">Overview</a>
+            <a href="#services">Research Capabilities</a>
+            <a href="#projects">Innovation</a>
+            <a href="#contact" class="btn-teal">Inquire Now</a>
+        </nav>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
-  </footer>
+    <div class="wrapper">
+        <!-- Hero Section -->
+        <section id="about">
+            <div class="hero-text">
+                <h1>Advancing Discovery Through <span>Scientific Research</span></h1>
+                <p>Dedicated to noncommercial scientific research, technical innovation, and experimental development across high-impact specialized disciplines.</p>
 
+                <a href="#contact" class="btn-teal" style="padding: 1rem 2rem; display: inline-block;">Connect With Our Researchers</a>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Atlanta, GA</h4>
+                        <p>3216 Paces Ferry Pl NW</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Scientific R&D</h4>
+                        <p>Core Industry Sector</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Noncommercial</h4>
+                        <p>Research Organization</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Researcher working in modern laboratory with scientific equipment">
+                <div class="floating-card">
+                    <i data-lucide="microscope" size="28"></i>
+                    <div>
+                        <strong style="color: var(--slate-navy); display: block;">Advanced Methodology</strong>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">Rigorous Scientific Standards</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="section-header">
+                <p>Technical Excellence</p>
+                <h2>Research & Development Disciplines</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="dna" size="26"></i>
+                    </div>
+                    <h3>Scientific Research</h3>
+                    <p>Conducting empirical analysis, controlled studies, and scientific investigation aimed at advancing technological and biological domain knowledge.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="atom" size="26"></i>
+                    </div>
+                    <h3>Experimental Development</h3>
+                    <p>Translating research insights into innovative methodologies, specialized technical frameworks, and experimental models.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="binary" size="26"></i>
+                    </div>
+                    <h3>Technical & Professional Services</h3>
+                    <p>Providing expert scientific oversight, technical evaluation, and specialized consulting within regulated frameworks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Banner -->
+        <section id="projects" class="showcase-banner">
+            <div class="showcase-images">
+                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Scientist analyzing samples using high precision lab instrumentation">
+                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80" alt="Scientific research lab environment with specialized equipment">
+                <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=600&q=80" alt="High-tech scientific data analysis interface">
+            </div>
+
+            <div class="showcase-content">
+                <p style="color: var(--teal-primary); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; font-size: 0.85rem;">Scientific Integrity</p>
+                <h3>Pioneering Research with Purpose & Precision</h3>
+                <p>At BELLA INSTITUTE LLC, our team is committed to analytical rigor and systematic scientific investigation to solve complex domain challenges.</p>
+
+                <ul class="feature-bullets">
+                    <li><i data-lucide="check-circle-2"></i> State-of-the-Art Laboratory Protocol Compliance</li>
+                    <li><i data-lucide="check-circle-2"></i> Specialized Scientific & Technical Staff</li>
+                    <li><i data-lucide="check-circle-2"></i> Evidence-Based Empirical Standards</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h2>Contact Our Team</h2>
+                    <p>Inquire about research initiatives, scientific collaborations, or general organizational details.</p>
+
+                    <div class="info-row">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <label>Email Address</label>
+                            <strong>contact@bellainstitute.org</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <label>Telephone</label>
+                            <strong>+1 472 255 5752</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <label>Facility Address</label>
+                            <strong>3216 Paces Ferry Pl NW Atlanta, GA, 30305-1309 United States</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault();">
+                    <div class="form-row">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="text" placeholder="Phone Number" required>
+                    </div>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea rows="5" placeholder="Details regarding your research inquiry, collaboration proposal, or technical consultation..." required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="modal-body">
+            <button class="close-btn" onclick="togglePrivacyModal()"><i data-lucide="x" size="24"></i></button>
+            <h3>Privacy Policy</h3>
+
+            <h4>1. Information Collection</h4>
+            <p>BELLA INSTITUTE LLC collects personal information provided via contact forms (such as names, phone numbers, and email addresses) strictly to address inquiries and handle research communications.</p>
+
+            <h4>2. Data Usage & Confidentiality</h4>
+            <p>We maintain strict confidentiality protocols regarding research inquiries and user communications. Personal details will never be sold or shared with external third parties.</p>
+
+            <h4>3. Inquiries</h4>
+            <p>For questions regarding our privacy guidelines, please reach out directly to contact@bellainstitute.org.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <p>&copy; BELLA INSTITUTE LLC. All rights reserved. Atlanta, GA.</p>
+            <div class="footer-links">
+                <a onclick="togglePrivacyModal()">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function togglePrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
